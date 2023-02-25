@@ -167,10 +167,7 @@ class FavoritesWidget extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Text('You have ${favorites.length} favorites:')
           ),
-          ...favorites.map((favorite) => ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text(favorite.asLowerCase)
-          ))
+          ...favorites.map((favorite) => WordPairDisplay(pair: favorite))
         ],
       )
     );
@@ -193,7 +190,8 @@ class WordPairDisplay extends StatelessWidget {
     // )
 
     return ListTile(
-      title: Text(pair.asPascalCase),
+      leading: Icon(Icons.favorite),
+      title: Text(pair.asLowerCase),
     );
   }
 }
